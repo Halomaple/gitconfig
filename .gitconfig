@@ -31,3 +31,5 @@
         ui = true
 [core]
         quotepath = off
+[gui]
+	encoding = utf-8
