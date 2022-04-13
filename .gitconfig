@@ -28,7 +28,7 @@
     pul = pull --rebase
     s = status
     td = tag -d
-    tdr = push origin -d 
+    tdr = push origin -d
     tl = tag -l
 [color]
     ui = true
