@@ -1,37 +1,41 @@
 [user]
-        name =
-        email =
+    name =
+    email =
 [alias]
-        a = add .
-        acm = !git add -A && git commit -m
-        b = branch
-        br = branch -a
-        ca = commit --amend
-        ci = commit
-        cm = commit -m
-        co = checkout
-        cob = checkout -b
-        cof = checkout -f
-        db = branch -D
-        drb = push -d origin
-        f = fetch -p origin
-        find = log --grep
-        ft = "!f() { git show-ref -s \"$1\"; }; f"
-        la = "!f() { git log --graph --raw --author=\"$1\"; }; f"
-        last = log -1 HEAD --graph --raw
-        lf = log -p
-        lg = log --graph --raw
-        lp = log --follow -p
-        mm = merge master
-        pb = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
-        pt = push --tag
-        pul = pull --rebase
-        s = status
-        td = tag -d
-        tl = tag -l
+    a = add .
+    acm = !git add -A && git commit -m
+    b = branch
+    br = branch -a
+    ca = commit --amend
+    ci = commit
+    cm = commit -m
+    co = checkout
+    cob = checkout -b
+    cof = checkout -f
+    db = branch -D
+    drb = push -d origin
+    f = fetch -p origin
+    find = log --grep
+    ft = "!f() { git show-ref -s \"$1\"; }; f"
+    la = "!f() { git log --graph --raw --author=\"$1\"; }; f"
+    last = log -1 HEAD --graph --raw
+    lf = log -p
+    lg = log --graph --raw
+    lp = log --follow -p
+    mm = merge master
+    pb = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    pt = push --tag
+    pul = pull --rebase
+    s = status
+    td = tag -d
+    tl = tag -l
 [color]
-        ui = true
+    ui = true
 [core]
-        quotepath = off
+    quotepath = off
+[credential]
+    helper = manager
 [gui]
-        encoding = utf-8
+    encoding = utf-8
+    fontui = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+    fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
