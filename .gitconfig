@@ -1,6 +1,6 @@
 [user]
-    name =
-    email =
+    name = Jeff
+    email = jeff.doyle@foxmail.com
 [alias]
     a = add .
     acm = !git add -A && git commit -m
@@ -21,6 +21,7 @@
     last = log -1 HEAD --graph --raw
     lf = log -p
     lg = log --graph --raw
+    lo = log --oneline
     lp = log --follow -p
     mm = merge master
     pb = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
