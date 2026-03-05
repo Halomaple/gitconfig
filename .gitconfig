@@ -1,43 +1,90 @@
+# 用户信息
 [user]
-    name = Jeff
-    email = jeff.doyle@foxmail.com
+    # 用来显示提交作者名称
+    name = 
+    # 用来显示提交作者邮箱
+    email = 
+
+# 别名列表
 [alias]
+    # 添加文件内容到索引
     a = add .
+    # 添加文件内容到索引、提交仓库的修改并输入提交信息
     acm = !git add -A && git commit -m
+    # 列出所有本地分支
     b = branch
+    # 修改当前本地分支的名称
+    bm = branch -m
+    # 列出所有本地分支和远程分支
     br = branch -a
-    ca = commit --amend
+    # 使用一次新的commit，替代上一次提交
+    # 如果代码没有任何新变化，则用来改写上一次commit的提交信息
+    ca = commit --amend -m 
+    # 提交
     ci = commit
+    # 提交仓库的修改到暂存区并输入提交信息
     cm = commit -m
+    # 恢复暂存区的指定文件到工作区
     co = checkout
+    # 将暂存区的改动切换到一个新的分支
     cob = checkout -b
+    # 丢弃本地修改和任何碍事的未追踪文件或目录直接切换到新分支
     cof = checkout -f
+    # 删除本地分支
     db = branch -D
+    # 删除远程分支或标签
     drb = push -d origin
+    # 从远程仓库中获取最新的提交到本地（不替换当前工作区、当前分支的改动）
     f = fetch -p origin
+    # 从提交日志中搜索信息
     find = log --grep
-    ft = "!f() { git show-ref -s \"$1\"; }; f"
+    # 从提交日志中搜索作者信息
     la = "!f() { git log --graph --raw --author=\"$1\"; }; f"
+    # 打印带提交作者名称的简略版提交历史信息
+    lao = "!f() { git log -n \"$1\" --pretty=format:\"%h %an %ad %s\" --date=short; }; f"
+    # 显示上一个提交信息
     last = log -1 HEAD --graph --raw
+    # 用于查看提交历史的详细信息，包括每个提交的差异
     lf = log -p
+    # 输出提交历史图表
     lg = log --graph --raw
+    # 打印简略版提交历史信息
     lo = log --oneline
+    # 继续列出文件的历史记录，包括重命名之后的情况（仅适用于单个文件）
     lp = log --follow -p
+    # 合并master分支到当前分支
     mm = merge master
+    # 合并develop分支到当前分支
+    md = merge develop
+    # 将当前新建的本地分支推送到远程并将本地分支与远程分支关联
     pb = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    # 将当前的标签推动到远程
     pt = push --tag
+    # 从远程拉取到当前工作区
     pul = pull --rebase
+    # 显示工作区和暂存区的文件状态
     s = status
+    # 删除本地标签
     td = tag -d
-    tdr = push origin -d
+    # 列出本地所有标签信息
     tl = tag -l
+
+# 命令行相关配置
 [color]
+    # 自动为大部分的输出加上颜色
     ui = true
 [core]
+    # 解决在默认设置下，中文文件名在工作区状态输出，中文名不能正确显示，而是显示为八进制的字符编码的问题
     quotepath = off
 [credential]
+    # Git Credential Manager配置
     helper = manager
 [gui]
+    # Gik的UI配置
     encoding = utf-8
     fontui = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
     fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+[credential "https://github.com"]
+    provider = generic
+[safe]
+	directory = *
